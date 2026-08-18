@@ -6,14 +6,10 @@ workflows:
     environment:
       flutter: stable
     scripts:
-      - name: Generate Android folder if missing
+      - name: Clean and recreate Android folder
         script: |
-          if [ ! -d "android" ]; then
-            echo "android folder missing - creating it..."
-            flutter create . --platforms=android --project-name marching_band_app
-          else
-            echo "android folder already exists"
-          fi
+          rm -rf android
+          flutter create . --platforms=android --project-name marching_band_app
       - name: Get Flutter packages
         script: |
           flutter pub get
@@ -22,4 +18,3 @@ workflows:
           flutter build apk --release
     artifacts:
       - build/**/outputs/**/*.apk
-    
