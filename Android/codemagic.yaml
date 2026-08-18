@@ -6,11 +6,11 @@ workflows:
     environment:
       flutter: stable
     scripts:
-      - name: Clean and recreate Android folder
+      - name: Completely clean and recreate project
         script: |
-          rm -rf android
-          flutter create . --platforms=android --project-name marching_band_app
-      - name: Get Flutter packages
+          rm -rf android ios web linux macos windows .dart_tool build
+          flutter create . --platforms=android --project-name marching_band_app --org com.example
+      - name: Get packages
         script: |
           flutter pub get
       - name: Build APK
