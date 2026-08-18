@@ -28,7 +28,7 @@ class HomeScreen extends StatelessWidget {
             subtitle: '${show.players.length} members',
             onTap: () => Navigator.push(
               context,
-              MaterialPageRoute(builder: (_) => const PlayersScreen()),
+              MaterialPageRoute(builder: (_) => PlayersScreen()),
             ),
           ),
           _buildCard(
@@ -38,7 +38,7 @@ class HomeScreen extends StatelessWidget {
             subtitle: '${show.sets.length} sets',
             onTap: () => Navigator.push(
               context,
-              MaterialPageRoute(builder: (_) => const EditorScreen()),
+              MaterialPageRoute(builder: (_) => EditorScreen()),
             ),
           ),
           _buildCard(
@@ -48,7 +48,7 @@ class HomeScreen extends StatelessWidget {
             subtitle: 'Watch the full animation',
             onTap: () => Navigator.push(
               context,
-              MaterialPageRoute(builder: (_) => const PlaybackScreen()),
+              MaterialPageRoute(builder: (_) => PlaybackScreen()),
             ),
           ),
         ],
@@ -56,11 +56,13 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildCard(BuildContext context,
-      {required IconData icon,
-      required String title,
-      required String subtitle,
-      required VoidCallback onTap}) {
+  Widget _buildCard(
+    BuildContext context, {
+    required IconData icon,
+    required String title,
+    required String subtitle,
+    required VoidCallback onTap,
+  }) {
     return Card(
       margin: const EdgeInsets.only(bottom: 12),
       child: ListTile(
