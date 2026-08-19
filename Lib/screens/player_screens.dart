@@ -22,8 +22,10 @@ class PlayersScreen extends StatelessWidget {
           return ListTile(
             leading: CircleAvatar(
               backgroundColor: p.color,
-              child: Text('${p.number}',
-                  style: const TextStyle(color: Colors.white)),
+              child: Text(
+                '${p.number}',
+                style: const TextStyle(color: Colors.white),
+              ),
             ),
             title: Text(p.name),
             subtitle: Text(p.section),
