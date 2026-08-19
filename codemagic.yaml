@@ -6,7 +6,7 @@ workflows:
     environment:
       flutter: stable
     scripts:
-      - name: Create Android folder
+      - name: Create Android folder only
         script: |
           flutter create . --platforms=android --project-name marching_band_app --org com.example
       - name: Get packages
